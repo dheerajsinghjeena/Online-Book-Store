@@ -1,0 +1,67 @@
+/* import for new font family */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+/* footer*/
+.footer {
+    padding: 20px 0px;
+}
+
+/* footer section */
+.footer-section {
+    margin: auto;
+    padding: 0;
+}
+
+.footer-section p {
+    font-weight: 700;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 17px;
+}
+
+.footer-section ul {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 17px;
+    line-height: 2;
+}
+
+.footer-section ul li {
+    list-style-type: none;
+    margin: 0px;
+}
+
+h2.footer-heading {
+    font-family: "Playfair Display", serif;
+    margin-bottom: 10px;
+    color: #ebb184;
+    border-bottom: 1px solid grey;
+}
+
+p.email a {
+    color: white;
+}
+
+p.email a:hover {
+    color: #D14031;
+    transition: 2s ease;
+}
+
+
+.footer-icon p {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid grey;
+}
+
+.footer-icon a {
+    text-decoration: none;
+    margin-right: 25px;
+    font-size: 30px;
+    color: white;
+}
+
+.footer-icon p a i:hover {
+    color: #D14031;
+    transition: 1s ease;
+}

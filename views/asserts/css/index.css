@@ -1,0 +1,338 @@
+/* import for font family playfair */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+/* media query for search box */
+@media only screen and (max-width: 768px) {
+    div.left-crousel {
+        padding-left: 0px;
+    }
+
+    div.banner-info h2 {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    div.f-book-media p {
+        padding-left: 10px;
+    }
+}
+
+
+
+@media only screen and (max-width: 968px) {
+    form.search {
+        padding: 10px;
+    }
+}
+
+/* style for home page carousel */
+
+#mycarousel {
+    padding: 0px;
+}
+
+.left-crousel {
+    padding-left: 50px;
+}
+
+.carousel-h {
+    height: 500px;
+}
+
+.banner-info h2 {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: start;
+}
+
+form.search {
+    padding: 15px;
+    background-color: #FFFFFF;
+    border-radius: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+form.search input {
+    padding: 15px 20px;
+    border-radius: 50px;
+    border: 1px solid #ebb184;
+    width: 60%;
+    flex: 1;
+}
+
+.search-button {
+    padding: 15px 20px;
+    border-radius: 50px;
+    border: 1px solid black;
+    margin-left: 20px;
+    /* flex: 1; */
+}
+
+.search-button:hover {
+    background-color: #0d6dfdc7;
+    border: 1px solid #0d6dfdc7;
+}
+
+section.featured-books {
+    padding: 10px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.f-book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* sale section design */
+.sale {
+    background-image: url(../images/booksBg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div.sale-dis {
+    position: relative;
+    color: black;
+    left: 0px;
+    top: 100px;
+    font-family: cursive;
+    font-size: 20px;
+}
+
+div.sale-dis h2 {
+    font-style: italic;
+    font-family: cursive;
+}
+
+div.sale-dis h1 {
+    font-family: "Playfair Display", serif;
+    color: #ebb184;
+    text-transform: capitalize;
+}
+
+/* new arrival books */
+.new-arrival {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.new-arrival h1 {
+    font-family: "Playfair Display", serif;
+    color: #ebb184;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.new-arrival h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6%;
+    height: 4px;
+    background-color: #000;
+}
+
+.new-arrival ul {
+    margin-top: 30px;
+}
+
+.new-arrival ul li {
+    display: inline-block;
+    /* border: 1px solid red; */
+    padding: 10px 30px;
+    margin-left: 10px;
+    /* background-color: white; */
+}
+
+.new-arrival ul a {
+    color: black;
+}
+
+
+.new-arrival ul li:hover {
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.336);
+}
+
+/* book section */
+
+
+.card {
+    border: none !important;
+    position: relative;
+}
+
+.card-header {
+    padding: 0px !important;
+}
+
+.card img {
+    transition: opacity 0.4s ease;
+    /* Smooth transition effect */
+}
+
+.card:hover img {
+    opacity: 0.7;
+}
+
+.card:hover {
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.336);
+}
+
+.card p {
+    font-family: "Playfair Display", serif;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.wishlist-cart {
+    display: none;
+    background-color: #ebb184bb;
+    position: absolute;
+    width: 100%;
+    bottom: 90px;
+    transition: 1s ease-in;
+    padding: 3px;
+}
+
+
+.card:hover .wishlist-cart {
+    bottom: 90px;
+    display: block;
+    transition: 1s ease;
+}
+
+/* video section */
+.book-festival {
+    margin-top: 50px;
+    background-image: url(../images/book-festival.jpg);
+    background-size: cover;
+    display: flex;
+    min-height: 500px;
+    justify-content: center;
+    align-items: center;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 50px;
+}
+
+.festi-bg h3 {
+    text-shadow: 2px 2px 4px rgba(10, 10, 10, 0.945);
+    color: white;
+    font-weight: 400;
+}
+
+.festi-bg h1 {
+    color: #ebb184;
+    font-family: "Playfair Display", serif;
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    word-spacing: 10px;
+    text-shadow: 2px 2px 4px rgba(77, 75, 75, 0.945);
+}
+
+.festi-bg a {
+    color: white;
+    padding: 10px;
+    display: inline-block;
+    width: 15%;
+    background-color: #ebb184;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.festi-bg a:hover {
+    background-color: #db8645;
+}
+
+/* customer review */
+.review {
+    /* height: 300px; */
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.review h1 {
+    font-family: "Playfair Display", serif;
+    color: #ebb184;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.review h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6%;
+    height: 4px;
+    background-color: #000;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 10px;
+}
+
+.review-icon i {
+    color: gold;
+}
+
+/* blog section */
+.section_heading_5 {
+    position: relative;
+    color: #ebb184;
+    font-family: "Playfair Display", serif;
+}
+
+.section_heading_5::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6%;
+    height: 4px;
+    background-color: #000;
+}
+
+.blogging {
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+.blog-text {
+    font-family: sans-serif !important;
+    font-weight: normal !important;
+    text-transform: none;
+    font-size: 20px !important;
+}
+
+a.blog-button {
+    background-color: #ebb184;
+    color: white;
+}
+
+a.blog-button:hover {
+    background-color: #ebb184;
+    color: white;
+}

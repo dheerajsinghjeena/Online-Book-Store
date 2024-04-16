@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Literature-collection</title>
+    <link rel="stylesheet" href="./asserts/css/main.css">
+    <link rel="stylesheet" href="./asserts/css/fiction.css">
+</head>
+
+<body>
+    <!-- include for header file-->
+    <%- include('./common/header.ejs') %>
+
+    <!-- page navigation -->
+    <div class="container-fluid">
+        <div class="row fiction-navigation">
+            <div class="col-12 mt-5">
+                <h1 class="text-center text-white">Literature</h1>
+                <h5 class="text-center text-white">Home/Collection/Literature</h5>
+            </div>
+        </div>
+    </div>
+
+    <!--  -->
+    <section class="fiction">
+        <div class="container-fluid">
+            <h1 class="text-center collection-heading">Literature</h1>
+            <div class="row">
+                <div class="col-3">
+                    <%- include('./common/filter.ejs') %>
+                </div>
+
+                <div class="col-9">
+                    <div class="row">
+
+                        <% if(viewData.length> 0){ %>
+                            <% for(var i=0; i < viewData.length; i++){%>
+                        <div class="col-md-4 col-sm-6 mt-3">
+                            <div class="card text-center card1">
+                                <img src="/<%= viewData[i].image %>" class="card-img-top" style="height: 300px" />
+                                <div class="card-body">
+                                    <p class="card-title">
+                                        <%= viewData[i].bookName %>
+                                    </p>
+                                    <h6>By: <%= viewData[i].bookAuthor %></h6>
+                                    <p>Price: ₹<%= viewData[i].bookPrice %></p>
+                                    <p>BookId: <%= viewData[i].bookId %></p>
+
+                                    <!-- <span class="review-icon">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </span> -->
+                                </div>
+                            </div>
+                        </div>
+                        <%} %>
+                                <%} else{%> No Record Found <%} %>
+
+                        <!-- first book
+                        <div class="col-md-4 col-sm-6 mt-3">
+                            <div class="card text-center card1">
+                                <img src="./asserts/images/book3.jpg" class="card-img-top" style="height: 300px" />
+                                <div class="card-body">
+                                    <p class="card-title">The House in the Pines</p>
+                                    <h6>By: Ana Reyes</h6>
+                                    <p>Price: ₹700</p>
+
+                                    <span class="review-icon">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        second book
+                        <div class="col-md-4 col-sm-6 mt-3">
+                            <div class="card text-center card1">
+                                <img src="./asserts/images/literature1.jpg" class="card-img-top"
+                                    style="height: 300px" />
+                                <div class="card-body">
+                                    <p class="card-title">The Great Gatsby</p>
+                                    <h6>By: F.Scott Fitzgerald</h6>
+                                    <p>Price: ₹900</p>
+
+                                    <span class="review-icon">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star-half"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        third book
+                        <div class="col-md-4 col-sm-6 mt-3">
+                            <div class="card text-center card1">
+                                <img src="./asserts/images/literature2.jpg" class="card-img-top"
+                                    style="height: 300px" />
+                                <div class="card-body">
+                                    <p class="card-title">To Kill a Mockingbird</p>
+                                    <h6>By: Harper Lee</h6>
+                                    <p>Price: ₹700</p>
+
+                                    <span class="review-icon">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        fourth book
+                        <div class="col-md-4 col-sm-6 mt-3">
+                            <div class="card text-center card1">
+                                <img src="./asserts/images/literature3.webp" class="card-img-top"
+                                    style="height: 300px" />
+                                <div class="card-body">
+                                    <p class="card-title">1984</p>
+                                    <h6>By: George Orwell</h6>
+                                    <p>Price: ₹1000</p>
+
+                                    <span class="review-icon">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        fifth book
+                        <div class="col-md-4 col-sm-6 mt-3">
+                            <div class="card text-center card1">
+                                <img src="./asserts/images/literature4.jpg" class="card-img-top"
+                                    style="height: 300px" />
+                                <div class="card-body">
+                                    <p class="card-title">The Alchemist</p>
+                                    <h6>By: J. D. Salinger</h6>
+                                    <p>Price: ₹1200</p>
+
+                                    <span class="review-icon">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        sixth book
+                        <div class="col-md-4 col-sm-6 mt-3">
+                            <div class="card text-center card1">
+                                <img src="./asserts/images/literature5.jpg" class="card-img-top"
+                                    style="height: 300px" />
+                                <div class="card-body">
+                                    <p class="card-title">Beloved</p>
+                                    <h6>By: Toni Morrison</h6>
+                                    <p>Price: ₹1200</p>
+
+                                    <span class="review-icon">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        seventh book
+                        <div class="col-md-4 col-sm-6 mt-3">
+                            <div class="card text-center card1">
+                                <img src="./asserts/images/literature6.jpg" class="card-img-top"
+                                    style="height: 300px" />
+                                <div class="card-body">
+                                    <p class="card-title">Catch-22</p>
+                                    <h6>By: Joseph Heller</h6>
+                                    <p>Price: ₹1000</p>
+
+                                    <span class="review-icon">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- include for footer file-->
+    <footer>
+        <%- include('./common/footer.ejs') %>
+    </footer>
+</body>
+
+</html>

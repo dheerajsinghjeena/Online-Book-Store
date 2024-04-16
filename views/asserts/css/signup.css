@@ -1,0 +1,48 @@
+body{
+    background-image: url(../images/signup_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+form.register{
+    /* height: 600px; */
+    border: 1px solid red;
+    width: 50%;
+    background-color: white;
+    border-radius: 20px;
+    border: none;
+}
+
+form.register h3{
+    color: #ebb184;
+    font-family: "Playfair Display", serif;
+}
+
+form.register label{
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+  }
+  
+form.register input{
+  padding: 8px;
+  border-radius: 20px;
+  border: 1px solid #ebb184;
+  margin-bottom: 10px;
+}
+
+form.register input, label{
+    display: block;
+}
+
+form.register button{
+    background-color: #ebb184;
+    margin-top: 15px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+form.register button:hover{
+    background-color: #ebb184;
+    border-color: #ebb184;
+  }

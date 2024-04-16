@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cooking-collection</title>
+    <link rel="stylesheet" href="./asserts/css/main.css">
+    <link rel="stylesheet" href="./asserts/css/fiction.css">
+</head>
+
+<body>
+    <!-- include for header file-->
+   <%- include('./common/header.ejs') %>
+   
+    <!-- page navigation -->
+    <div class="container-fluid">
+        <div class="row fiction-navigation">
+            <div class="col-12 mt-5">
+                <h1 class="text-center text-white">Cooking</h1>
+                <h5 class="text-center text-white">Home/Collection/Cooking</h5>
+            </div>
+        </div>
+    </div>
+
+    <!--  -->
+    <section class="fiction">
+        <div class="container-fluid">
+            <h1 class="text-center collection-heading">Cooking</h1>
+            <div class="row">
+                <div class="col-3">
+                    <%- include('./common/filter.ejs') %>
+                </div>
+
+                <div class="col-9">
+                    <div class="row">
+
+                        <% if(viewData.length> 0){ %>
+                            <% for(var i=0; i < viewData.length; i++){%>
+                        <div class="col-md-4 col-sm-6 mt-3">
+                            <div class="card text-center card1">
+                                <img src="/<%= viewData[i].image %>" class="card-img-top" style="height: 300px" />
+                                <div class="card-body">
+                                    <p class="card-title">
+                                        <%= viewData[i].bookName %>
+                                    </p>
+                                    <h6>By: <%= viewData[i].bookAuthor %></h6>
+                                    <p>Price: ₹<%= viewData[i].bookPrice %></p>
+                                    <p>BookId: <%= viewData[i].bookId %></p>
+
+                                    <!-- <span class="review-icon">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </span> -->
+                                </div>
+                            </div>
+                        </div>
+                        <%} %>
+                                <%} else{%> No Record Found <%} %>
+
+                        <!-- first book
+                        <div class="col-md-4 col-sm-6 mt-3">
+                            <div class="card text-center card1">
+                                <img src="./asserts/images/book5.jpg" class="card-img-top" style="height: 300px" />
+                                <div class="card-body">
+                                    <p class="card-title">The Basic Cook Book Guide</p>
+                                    <h6>By: Lesley Pagett</h6>
+                                    <p>Price: ₹500</p>
+
+                                    <span class="review-icon">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        second book
+                        <div class="col-md-4 col-sm-6 mt-3">
+                            <div class="card text-center card1">
+                                <img src="./asserts/images/cook1.jpg" class="card-img-top" style="height: 300px" />
+                                <div class="card-body">
+                                    <p class="card-title">The Groundnut Cookbook</p>
+                                    <h6>By: Duval Timothy</h6>
+                                    <p>Price: ₹300</p>
+
+                                    <span class="review-icon">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star-half"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        third book
+                        <div class="col-md-4 col-sm-6 mt-3">
+                            <div class="card text-center card1">
+                                <img src="./asserts/images/cook2.jpg" class="card-img-top" style="height: 300px" />
+                                <div class="card-body">
+                                    <p class="card-title">How To Eat</p>
+                                    <h6>By: Nigella Lawson</h6>
+                                    <p>Price: ₹600</p>
+
+                                    <span class="review-icon">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- include for footer file-->
+    <footer>
+        <%- include('./common/footer.ejs') %>
+    </footer>
+</body>
+
+</html>

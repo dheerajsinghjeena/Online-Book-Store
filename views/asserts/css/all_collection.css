@@ -1,0 +1,54 @@
+.collection-navigation {
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/collection-bg.png);
+    height: 200px;
+    background-repeat: no-repeat;
+
+    background-size: cover;
+}
+
+.collection-navigation h1,
+h5 {
+    padding: 0px !important;
+}
+
+/* books section */
+.collection{
+    margin-bottom: 50px;
+}
+
+.card {
+    overflow: hidden;
+    /* Hide any overflow of the image */
+    width: 300px;
+    /* Adjust container width as needed */
+    height: 200px;
+    position: relative;
+
+}
+
+.card img {
+    max-width: 100%;
+    vertical-align: top;
+    height: 300px;
+    transition: 0.5s ease;
+    z-index: 1;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.card-body {
+    z-index: 1;
+    background-color: #ecece5;
+}
+
+.card-body h6 {
+    font-weight: 600;
+    font-size: 20px;
+    color: black;
+}
+
+.card:hover h6 {
+    color: blue;
+}

@@ -1,0 +1,9 @@
+.about-navigation {
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/about-us.jpg);
+    height: 200px;
+}
+
+.about-navigation h1,
+h5 {
+    padding: 0px !important;
+}

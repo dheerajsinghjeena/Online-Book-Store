@@ -1,0 +1,286 @@
+<style>
+    @media only screen and (max-width: 720px) {
+        div.high-end-device {
+            display: none;
+        }
+    }
+
+    @media only screen and (min-width: 721px) {
+        div.small-end-device {
+            display: none;
+        }
+    }
+
+    .high-end-device {
+        box-shadow:2px 4px 6px rgba(0, 0, 0, 0.336) ;
+        padding: 10px;
+    }
+
+    .filter-button {
+        display: flex;
+        background-color: #ebb184;
+        padding: 4px;
+        border-radius: 10px;
+    }
+
+    .small-end-device {
+        padding: 0px !important;
+    }
+
+    .offcanvas-icon {
+        text-align: end;
+        flex: 1;
+        margin-top: 5px;
+        margin-left: 2px;
+    }
+
+    .label {
+        font-size: 25px;
+        border-bottom: 1px solid black;
+        font-family: "Playfair Display", serif;
+    }
+
+    .accordion-item {
+        padding: 10px;
+        border-bottom: 1px solid black;
+    }
+
+    .check-box {
+        display: block;
+    }
+
+    input,
+    label {
+        display: inline;
+        font-size: 17px;
+    }
+
+    input {
+        margin-right: 10px;
+    }
+
+    #collapseOne {
+        margin-top: 15px;
+    }
+
+    .form-check-input[type=checkbox] {
+        border: 1px solid black;
+    }
+
+    button {
+        font-size: 25px !important;
+        font-weight: 600;
+    }
+
+    .price {
+        display: inline;
+    }
+
+    .price input {
+        width: 40%;
+        border-radius: 10px;
+        border: 1px solid black;
+        padding: 5px;
+    }
+</style>
+<!-- this is for larger screen -->
+<div class="container-fluid high-end-device">
+    <h1 class="label">Filter</h1>
+    <div class="row">
+        <!-- for availability -->
+        <div class="accordion-item">
+            <h3 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    Availability
+                </button>
+            </h3>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <span class="check-box">
+                        <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            In Stock
+                        </label>
+                    </span>
+
+                    <span class="check-box">
+                        <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Out of Stock
+                        </label>
+                    </span>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- for price -->
+        <div class="accordion-item">
+            <h3 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    Price
+                </button>
+            </h3>
+            <div id="collapseTwo" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p>The highest price is ₹1200</p>
+                    <span class="price">
+                        <input type="number" name="min" placeholder="min price">
+                        <input type="number" name="max" placeholder="max price">
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- for book type -->
+        <div class="accordion-item border-bottom-0">
+            <h3 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    Book Type
+                </button>
+            </h3>
+            <div id="collapseThree" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <span class="check-box">
+                        <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Fiction
+                        </label>
+                    </span>
+
+                    <span class="check-box">
+                        <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Literature
+                        </label>
+                    </span>
+
+                    <span class="check-box">
+                        <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Comedy
+                        </label>
+                    </span>
+
+                    <span class="check-box">
+                        <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Mystery
+                        </label>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- this is for small end devices -->
+<div class="container-fluid small-end-device">
+    <a class="text-decoration-none text-black filter-button" data-bs-toggle="offcanvas" href="#offcanvasExample"
+        aria-controls="offcanvasExample">
+        Filter
+        <i class="fa-solid fa-bars offcanvas-icon"></i>
+    </a>
+    <div class="row">
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h1 class="label offcanvas-title" id="offcanvasExampleLabel">Filter</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <!-- for availability -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Availability
+                        </button>
+                    </h3>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <span class="check-box">
+                                <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    In Stock
+                                </label>
+                            </span>
+
+                            <span class="check-box">
+                                <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Out of Stock
+                                </label>
+                            </span>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- for price -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                            Price
+                        </button>
+                    </h3>
+                    <div id="collapseTwo" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>The highest price is ₹1200</p>
+                            <span class="price">
+                                <input type="number" name="min" placeholder="min price">
+                                <input type="number" name="max" placeholder="max price">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- for book type -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
+                            Book Type
+                        </button>
+                    </h3>
+                    <div id="collapseThree" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <span class="check-box">
+                                <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Fiction
+                                </label>
+                            </span>
+
+                            <span class="check-box">
+                                <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Literature
+                                </label>
+                            </span>
+
+                            <span class="check-box">
+                                <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Comedy
+                                </label>
+                            </span>
+
+                            <span class="check-box">
+                                <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Mystery
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

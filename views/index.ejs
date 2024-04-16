@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Page</title>
+  <link rel="stylesheet" href="./asserts/css/main.css">
+  <link rel="stylesheet" href="./asserts/css/index.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- cdn for swiper js -->
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- script for swiper js -->
+</head>
+
+<body>
+  <!-- include for header file-->
+  <%- include('./common/header.ejs') %>
+
+  <!-- carousel part -->
+  <div class="container-fluid">
+    <div class="row">
+      <div id="mycarousel" class="carousel slide" data-bs-ride="carousel">
+        <ol>
+          <li data-bs-target="#mycarousel" data-bs-slide-to="0" class="active list-unstyled"></li>
+          <li data-bs-target="#mycarousel" data-bs-slide-to="1" class="list-unstyled"></li>
+        </ol>
+
+        <div class="carousel-inner">
+          <div class="carousel-item carousel-h active" data-bs-interval="3000">
+            <div class="row left-crousel">
+              <!-- general information -->
+              <div class=" col-md-5 banner-info">
+                <h2 class="mt-5">+5,000 books</h2>
+                <h2 style="color: #ebb184; font-weight: 500;">in one place</h2>
+
+                <!-- search form -->
+                <form class="search mt-4">
+                  <input type="text" name="search" name="search" placeholder="Search Book..">
+                  <button type="submit" class="search-button ">
+                    Search
+                  </button>
+                </form>
+
+                <section class="featured-books">
+                  <div class="row">
+                    <div class="col-4 f-book f-book-media">
+                      <p style="margin-top: 50%;">
+                        Newly Launched Books
+                      </p>
+                    </div>
+
+                    <div class="col-4 f-book">
+                      <p>
+                        <img src="./asserts/images/featured-book2.webp" height="130px" style="text-align: center;">
+                      </p>
+                      <p style="text-align: center;">
+                        Fiction <br>
+                        <span style="font-size: 10px;">2024/ Wendell Brown</span>
+                      </p>
+                    </div>
+
+                    <div class="col-4 f-book">
+                      <p>
+                        <img src="./asserts/images/featured-book1.jpg" height="130px" style="text-align: center;">
+                      </p>
+                      <p style="text-align: center;">
+                        Kids<br>
+                        <span style="font-size: 10px;">2024/ Sarwat Chadda</span>
+                      </p>
+                    </div>
+                  </div>
+
+                </section>
+              </div>
+
+              <!-- general image -->
+              <div class="col-md-7 banner-info">
+                <img src="./asserts/images/bookSearchBg.jpg" style="width: 100%; height: 100%;" />
+              </div>
+            </div>
+          </div>
+
+          <!-- second carousel -->
+          <div class="carousel-item carousel-h sale" data-bs-interval="3000">
+            <div class="row">
+              <div class="carousel-caption sale-dis col-md-6">
+                <h2>Catch with March Offer</h2>
+                <h1>Get 40% Off for all books...</h1>
+                <p>
+                  Unleash the reader in you! Enjoy a thrilling 40% off at our online bookstore. Dive into a world of
+                  stories, where every page is an adventure!
+                </p>
+
+                <button class="btn" style="background-color: #ebb184; border-color: #ebb184;">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- new arrival -->
+  <section class="new-arrival">
+    <div class="container">
+      <h1 class="text-center">New Arrivals</h1>
+      <div class="row col-12">
+        <ul class="text-center ">
+          <a href="#" role="button" class="text-decoration-none">
+            <li>All</li>
+          </a>
+          <a href="#" role="button" class="text-decoration-none">
+            <li>Cook Book</li>
+          </a>
+          <a href="#" role="button" class="text-decoration-none">
+            <li>History</li>
+          </a>
+          <a href="#" role="button" class="text-decoration-none">
+            <li>Comics</li>
+          </a>
+          <a href="#" role="button" class="text-decoration-none">
+            <li>Romance</li>
+          </a>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- book section -->
+  <section class="books">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- books description -->
+        <div class="col-md-3 col-sm-6 mt-3">
+          <div class="card text-center">
+            <div class="card-header">
+              <img src="./asserts/images/book1.jpg" class="card-img-top" style="height: 400px" />
+              <div class="wishlist-cart ">
+                <%- include('./common/wishlist.ejs') %>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-title">SPARE</p>
+              <h6>By: Prince Harry</h6>
+            </div>
+
+          </div>
+
+
+        </div>
+
+        <!-- second book  -->
+        <div class="col-md-3 col-sm-6 mt-3">
+          <div class="card text-center card1">
+            <div class="card-header">
+              <img src="./asserts/images/book2.jpg" class="card-img-top" style="height: 400px" />
+              <div class="wishlist-cart ">
+                <%- include('./common/wishlist.ejs') %>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-title">Dream Land</p>
+              <h6>By: Nicholas Sparks</h6>
+            </div>
+          </div>
+        </div>
+
+        <!-- third book -->
+        <div class="col-md-3 col-sm-6 mt-3">
+          <div class="card text-center card1">
+            <div class="card-header">
+              <img src="./asserts/images/book3.jpg" class="card-img-top" style="height: 400px" />
+              <div class="wishlist-cart ">
+                <%- include('./common/wishlist.ejs') %>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-title">The House in the Pine</p>
+              <h6>By: Ana Reyes</h6>
+            </div>
+          </div>
+        </div>
+
+        <!-- fourth book -->
+        <div class="col-md-3 col-sm-6 mt-3">
+          <div class="card text-center card1">
+            <div class="card-header">
+              <img src="./asserts/images/book4.jpg" class="card-img-top" style="height: 400px" />
+              <div class="wishlist-cart ">
+                <%- include('./common/wishlist.ejs') %>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-title">The Armor of Light</p>
+              <h6>By: Ken Follett</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- books description -->
+        <div class="col-md-3 col-sm-6 mt-3">
+          <!-- fifth book -->
+          <div class="card text-center card1">
+            <div class="card-header">
+              <img src="./asserts/images/book5.jpg" class="card-img-top" style="height: 400px" />
+              <div class="wishlist-cart ">
+                <%- include('./common/wishlist.ejs') %>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-title">The Cook Basic Guide</p>
+              <h6>By: Lesley Pagett</h6>
+            </div>
+          </div>
+        </div>
+
+        <!-- sixth book  -->
+        <div class="col-md-3 col-sm-6 mt-3">
+          <div class="card text-center card1">
+            <div class="card-header">
+              <img src="./asserts/images/book6.jpg" class="card-img-top" style="height: 400px" />
+              <div class="wishlist-cart ">
+                <%- include('./common/wishlist.ejs') %>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-title">The History of the Ancient World</p>
+              <h6>By: Susan Wise Bauer</h6>
+            </div>
+          </div>
+        </div>
+
+        <!-- seventh book -->
+        <div class="col-md-3 col-sm-6 mt-3">
+          <div class="card text-center card1">
+            <div class="card-header">
+              <img src="./asserts/images/book7.jpg" class="card-img-top" style="height: 400px" />
+              <div class="wishlist-cart ">
+                <%- include('./common/wishlist.ejs') %>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-title">Technically Yours</p>
+              <h6>By: Denise Williams</h6>
+            </div>
+          </div>
+        </div>
+
+        <!-- eighth book -->
+        <div class="col-md-3 col-sm-6 mt-3">
+          <div class="card text-center card1">
+            <div class="card-header">
+              <img src="./asserts/images/book8.jpeg" class="card-img-top" style="height: 400px" />
+              <div class="wishlist-cart ">
+                <%- include('./common/wishlist.ejs') %>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-title">Always Be My Duchess</p>
+              <h6>By: Amalie Howard</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- book festival section -->
+  <section class="book-festival">
+    <div class="container">
+      <div class="row festi-bg text-center col-12">
+        <h3>Shop wide range of collections</h3>
+        <h1>Book Festival</h1>
+        <h3 class="text-uppercase"> All Book on Flat <span style="color: red;">50%</span> Off</h3>
+
+        <a href="#" class="text-decoration-none mt-3">Buy Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- customer testimonial  -->
+  <section class="review">
+    <div class="container">
+      <h1 class="text-center font-weight-light">Testimonial</h1>
+      <div class="row mt-3">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <!-- review first -->
+            <div class="swiper-slide">
+              <div class="row">
+                <div class="col-sm-3">
+                  <img src="./asserts/images/review-1.webp" height="200px">
+                </div>
+                <div class="col-sm-9 text">
+                  <p>
+                    Shopping at the online bookstore was a breeze. The website's intuitive design and extensive
+                    collection made finding my next read a pleasure. From quick and secure transactions to timely
+                    delivery, the experience was seamless.
+                  </p>
+                  <span class="review-icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half"></i>
+                  </span> - Shushil
+                </div>
+              </div>
+            </div>
+
+            <!-- second review -->
+            <div class="swiper-slide">
+              <div class="row">
+                <div class="col-sm-3">
+                  <img src="./asserts/images/review-2.jpeg" height="200px">
+                </div>
+                <div class="col-sm-9">
+                  <p>
+                    I highly recommends this online bookstore! With its vast selection, seamless browsing, and secure
+                    transactions, finding the perfect read has never been easier. Their exceptional customer service
+                    adds a personal touch, making every purchase a delight.
+                  </p>
+
+                  <span class="review-icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </span> - David
+                </div>
+              </div>
+
+            </div>
+            <div class="swiper-slide">
+              <div class="row">
+                <div class="col-sm-3">
+                  <img src="./asserts/images/review-3.jpeg" height="200px">
+                </div>
+                <div class="col-sm-9">
+                  <p>
+                    Simran this online bookstore for its remarkable service! With a diverse range of titles and an
+                    intuitive browsing experience, it's a haven for book lovers. The efficient ordering process and
+                    timely delivery make every purchase a breeze.
+                  </p>
+
+                  <span class="review-icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half"></i>
+                  </span> - Simran
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="row">
+                <div class="col-sm-3">
+                  <img src="./asserts/images/review-4.jpg" height="200px">
+                </div>
+                <div class="col-sm-9">
+                  <p>
+                    Alexis is thrilled with his experience at this online bookstore! The extensive collection, coupled
+                    with user-friendly navigation, ensures a seamless shopping experience. With secure transactions and
+                    prompt delivery, John found the process incredibly convenient.
+                  </p>
+
+                  <span class="review-icon">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </span> - Alexis
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- blog section -->
+  <section class="blogging">
+    <div class="container blogging-detail">
+      <h1 class="text-uppercase text-center section_heading_5">
+        Blog's
+        </h>
+        <div class="row">
+          <!-- author blog -->
+          <div class="col-md-4 col-sm-6 mt-3" id="animate4">
+            <div class="card text-center" style="border: none">
+              <img src="./asserts/images/blog.jpg" class="card-img-top" style="height: 200px !important" />
+              <div class="card-body">
+                <h4 class="card-title " style="color:#ebb184">
+                  Know about the best author of India
+                </h4>
+                <p class="card-text blog-text">
+                  A book is a medium for recording information in the form of writing or images, typically composed of
+                  many pages....
+                </p>
+
+                <a class="btn blog-button" type="button" href="#">
+                  View More
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- cooking blog -->
+          <div class="col-md-4 col-sm-6 mt-3" id="animate5">
+            <div class="card text-center" style="border: none">
+              <img src="./asserts/images/cooking_blog.jpg" class="card-img-top" style="height: 200px" />
+              <div class="card-body">
+                <h4 class="card-title " style="color:#ebb184">
+                  Cooking Up Something Delicious
+                </h4>
+                <p class="card-text blog-text">
+                  The technical term for this physical arrangement is codex (plural, codices). In the history of
+                  hand-held....
+                </p>
+
+                <a class="btn blog-button" type="button" href="blog.html">
+                  View More
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 mt-3" id="animate6">
+            <div class="card text-center" style="border: none">
+              <img src="./asserts/images/blog2.webp" class="card-img-top" style="height: 200px" />
+              <div class="card-body">
+                <h4 class="card-title " style="color:#ebb184">
+                  Fantasy In Words And Pages
+                </h4>
+                <p class="card-text blog-text">
+                  Reading before bed has been shown to improve sleep quality. It help relax the mind and allow for
+                  smoother transition.......
+                </p>
+
+                <a class="btn blog-button" type="button" href="blog.html">
+                  View More
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- include for footer file-->
+  <footer>
+    <%- include('./common/footer.ejs') %>
+  </footer>
+  <!-- script for customer review -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+</body>
+
+</html>

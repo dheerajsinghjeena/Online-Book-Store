@@ -1,0 +1,106 @@
+/* import for font family playfair */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+nav {
+  margin: 0px !important;
+  padding: 5px !important;
+  /* border-bottom: 1px solid grey; */
+  box-shadow:2px 4px 6px rgba(0, 0, 0, 0.336) ;
+  background-color: white;
+}
+
+a.navbar-brand {
+  font-size: 30px;
+  color: #ebb184;
+  font-family: "Playfair Display", serif;
+}
+
+ul.nav-list li {
+  text-align: center;
+  font-size: 20px;
+  margin-left: 30px;
+  background-color: none;
+  position: relative;
+}
+
+ul.nav-list li a {
+  font-weight: 500;
+  display: block;
+  text-align: start !important;
+}
+
+ul.nav-list li a:hover {
+  color: black;
+}
+
+/* design for drop down part */
+ul.nav-list li ul.dropdown{
+  padding: 10px;
+  text-wrap: nowrap;
+  position: absolute;
+  display: none;
+  z-index: 1;
+  background-color: #eeeee8 !important;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.336);
+  border-radius: 10px;
+}
+
+ul.nav-list li ul.dropdown li{
+  display: block;
+}
+
+ul.nav-list li ul.dropdown li {
+  font-size: 18px;
+  margin-top: 5px;
+  margin-left: 0px;
+  text-align: start;
+}
+
+ul.nav-list li ul.dropdown li a{
+  text-decoration: none;
+  color: grey;
+}
+
+ul.nav-list li ul.dropdown li a:hover{
+  color: black;
+}
+
+ul.nav-list li:hover ul.dropdown{
+  display: block;
+}
+
+/* modal design */
+.modal-header{
+  font-family: "Playfair Display", serif;
+}
+
+.modal-dialog form{
+  padding: 10px;
+}
+
+.modal-dialog form label,input{
+  display: block;
+  width: 100%;
+  color: black;
+}
+
+.modal-dialog form label{
+  padding: 5px;
+}
+
+.modal-dialog form input{
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ebb184;
+}
+
+.modal-dialog form button{
+  background-color: #ebb184;
+  margin-top: 20px;
+  width: 30%;
+  /* margin-left: 50%; */
+}
+
+.modal-dialog form button:hover{
+  background-color: #ebb184;
+  border-color: #ebb184;
+}

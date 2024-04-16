@@ -1,0 +1,71 @@
+<!-- header part -->
+<style>
+    .view-registration {
+        margin-top: 56px;
+    }
+</style>
+
+
+<%- include('header.ejs') %>
+
+    <div class="container-fluid view-registration">
+        <div class="row">
+            <div class="col-3 p-0">
+                <%- include('left-menu.ejs') %>
+            </div>
+            <div class="col-9">
+                <h2>Registered People To Our store </h2>
+                <div class="row">
+                    <% if(viewData.length> 0){ %>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td>fist name</td>
+                                    <td>last name</td>
+                                    <td>date of birth</td>
+                                    <td>email</td>
+                                    <td>address</td>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <% for(var i=0; i< viewData.length; i++){ %>
+                                    <tr>
+                                        <td>
+                                            <%= viewData[i].first_name %>
+                                        </td>
+                                        <td>
+                                            <%= viewData[i].last_name %>
+                                        </td>
+                                        <td>
+                                            <!-- <%= viewData[i].dob %> -->
+                                                <% let date = new Date(viewData[i].dob); %>
+                                            <%= date.toLocaleDateString() %>
+                                        </td>
+                                        <td>
+                                            <%= viewData[i].email %>
+                                        </td>
+                                        <td>
+                                            <%= viewData[i].address %>
+                                        </td>
+
+                                        <td>
+                                            <!-- to delete data -->
+                                            <a href="/delete_register/<%= viewData[i]._id %>" class="btn btn-primary"
+                                                role="button">Delete</a>
+                                            <!-- to update data -->
+                                            <a href="/edit_register/<%= viewData[i]._id %>" class="btn btn-primary"
+                                                role="button">update</a>
+                                        </td>
+                                    </tr>
+                                    <% } %>
+                            </tbody>
+                        </table>
+                        <% } else { %> No Record Found
+                            <%} %>
+                </div>
+
+
+            </div>
+        </div>
+    </div>

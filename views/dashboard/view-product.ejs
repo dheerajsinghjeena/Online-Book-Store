@@ -1,0 +1,76 @@
+<!-- header part -->
+<style>
+    .view-product {
+        margin-top: 56px;
+    }
+</style>
+
+
+<%- include('header.ejs') %>
+
+    <div class="container-fluid view-product">
+        <div class="row">
+            <div class="col-3 p-0">
+                <%- include('left-menu.ejs') %>
+            </div>
+            <div class="col-9">
+                <h2>View Product Available</h2>
+
+                <% if(viewData.length> 0){ %>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td>Book Name</td>
+                                <td>Book Id</td>
+                                <td>Book Price</td>
+                                <td>Book Author</td>
+                                <td>Book Type</td>
+                                <td>In Stock</td>
+                                <td>Image</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <% for(var i=0; i< viewData.length; i++){ %>
+                                <tr>
+                                    <td>
+                                        <%= viewData[i].bookName %>
+                                    </td>
+                                    <td>
+                                        <%= viewData[i].bookId %>
+                                    </td>
+                                    <td>
+                                        <%= viewData[i].bookPrice %>
+                                    </td>
+                                    <td>
+                                        <%= viewData[i].bookAuthor %>
+                                    </td>
+                                    <td>
+                                        <%= viewData[i].bookType %>
+                                    </td>
+                                    <td>
+                                        <%= viewData[i].bookLeft %>
+                                    </td>
+                                    <td>
+                                        <img src="/<%=viewData[i].image %>" height="50" width="50">
+                                        <!-- <%= viewData[i].image %> -->
+
+                                    </td>
+
+                                    <td>
+                                        <!-- add  -->
+                                        <a href="/delete_product/<%= viewData[i]._id %>" class="btn btn-primary"
+                                            role="button">Delete</a>
+                                        <!-- update the data -->
+                                        <a href="/edit_product/<%= viewData[i]._id %>" class="btn btn-primary"
+                                            role="button">update</a>
+                                    </td>
+                                </tr>
+                                <% } %>
+                        </tbody>
+                    </table>
+                    <% } else { %> No Record Found
+                        <%} %>
+            </div>
+        </div>
+    </div>6

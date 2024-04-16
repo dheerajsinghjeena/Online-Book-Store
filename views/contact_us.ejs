@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Page</title>
+  <link rel="stylesheet" href="./asserts/css/main.css">
+  <link rel="stylesheet" href="./asserts/css/contact.css">
+</head>
+
+<body>
+  <!-- this include is used to add on the common header file -->
+  <%- include('./common/header.ejs') %>
+
+    <!-- contact us  -->
+    <div class="container-fluid">
+      <div class="row contact-navigation">
+        <div class="col-12 mt-5">
+          <h1 class="text-center text-white">Contact Us</h1>
+          <h5 class="text-center text-white">Home/ Contact Us</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- ASK QUERY -->
+    <section class="contact-us">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7">
+            <form class="query" method="post" action="/contact">
+              <h3 class="text-center">Ask Your Query</h3>
+              <label for="name">Enter Name: </label>
+              <input type="text" id="name" name="username" placeholder="Enter name" />
+
+              <label for="address" class="pt-3">Enter Address: </label>
+              <input type="text"  name="address" id="address" placeholder="enter address" />
+
+              <label for="contact" class="pt-3">Enter Contact Number: </label>
+              <input type="text" name= "contact" id="contact" placeholder="enter your phone number" />
+
+              <label for="message" class="pt-3">Enter Message: </label>
+              <textarea style="width: 100%; height: 100px; padding-left: 20px" placeholder="your query" name="query" id="query"></textarea>
+
+              <button class="btn p-2 w-25">SUBMIT</button>
+            </form>
+          </div>
+
+          <div class="col-lg-5 contact_detail query text-center">
+            <h3>Get In Touch With Our Team</h3>
+            <i class="fa-solid fa-phone icon"></i>
+            <p>
+              +91-9385475635/ +91-7213583729
+            </p>
+
+            <i class="fa-solid fa-envelope icon"></i>
+            <p>
+              bookstop@gmail.com/ getbooks@gmail.com
+            </p>
+
+            <i class="fa-solid fa-location-pin icon"></i>
+            <p>
+              Central Park, Sector 7, New Delhi<br />
+              India
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer section design -->
+    <%- include('./common/footer.ejs') %>
+</body>
+
+</html>

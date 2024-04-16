@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fiction-collection</title>
+    <link rel="stylesheet" href="./asserts/css/main.css">
+
+    <style>
+        button {
+            background-color: #ebb184;
+            border-radius: 10px !important;
+            border: none !important ;
+            padding: 10px 0px ;
+            width: 100% ;
+        }
+
+        button:hover{
+            color: white;
+        }
+
+        .review-icon{
+            color: gold;
+        }
+
+        
+    </style>
+
+</head>
+
+<body>
+    <!-- include for header file-->
+    <%- include('./common/header.ejs') %>
+
+        <section class="fiction">
+            <div class="container-fluid">
+                                    
+                <h1 class="text-center text-uppercase mt-3"><%= singleDetail.bookName %></h1>
+
+                <div class="row d-flex justify-content-center">
+                    <!-- first book -->
+                    <div class="col-4 mt-3">
+                        <div class="card text-center card1">
+                            <img src="/<%= singleDetail.image %>" class="card-img-top" style="height: 300px" />
+                            <div class="card-body">
+                                <h6 class="card-title text-uppercase">
+                                    <%= singleDetail.bookName %>
+                                </h6>
+                                <h6>By: <%= singleDetail.bookAuthor %></h6>
+                                <p>Price: ₹<%= singleDetail.bookPrice %></p>
+                                <p>BookId: <%= singleDetail.bookId %></p>
+                                <p>In Stock: <%= singleDetail.bookLeft%></p>
+
+                                <span class="review-icon d-block">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>    
+                                </span>
+                            </div>
+
+                            <div class="card-footer">
+                                <button class="d-block  mb-3">Add to
+                                    Cart <i class="fa-solid fa-cart-shopping"></i></button>
+                                <button class="d-block  mb-3">Add to
+                                    Wishlist <i class="fa-solid fa-heart"></i></button>
+                                <button class="d-block  mb-3">Buy
+                                    now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- include for footer file-->
+        <footer>
+            <%- include('./common/footer.ejs') %>
+        </footer>
+</body>
+
+</html>

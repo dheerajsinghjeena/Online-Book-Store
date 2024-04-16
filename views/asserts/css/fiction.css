@@ -1,0 +1,34 @@
+.fiction-navigation {
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/book-festival.jpg );
+    height: 200px;
+}
+
+.fiction-navigation h1 {
+    padding: 0px !important;
+    font-family: "Playfair Display", serif;
+}
+
+/* fiction book  */
+.fiction {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    /* border: 1px solid red; */
+}
+
+.fiction h1{
+    border-bottom: 1px solid black;
+}
+
+div p.card-title, h6{
+    font-weight: 700;
+    /* font-size: 20px; */
+    text-transform: uppercase;
+}
+
+.review-icon i {
+    color: gold;
+}
+
+.collection-heading {
+    font-family: "Playfair Display", serif;
+}
