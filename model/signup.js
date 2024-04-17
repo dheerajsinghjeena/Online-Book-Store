@@ -41,22 +41,22 @@ const userSchema = new mongoose.Schema({
     // in this we create for the confirm password
     confirm_password: {
         type: String,
-      
+
     }
 
 });
 
 // use of bcrypt for password hashing 
-userSchema.pre('save', function(next){
-    if(!this.isModified('password')){
+userSchema.pre('save', function (next) {
+    if (!this.isModified('password')) {
         return next();
     }
-    this.password = bcrypt.hashSync(this.password,10); 
-    next(); 
+    this.password = bcrypt.hashSync(this.password, 10);
+    next();
 });
 
-userSchema.methods.comparePassword = function(plaintext, callback) {
-    return callback(null, bcrypt.compareSync( plaintext, this.password));
+userSchema.methods.comparePassword = function (plaintext, callback) {
+    return callback(null, bcrypt.compareSync(plaintext, this.password));
 };
 
 

@@ -1,8 +1,10 @@
-get api to get data from database
 post api to post data to database
+get api to get data from database
 update the existing data in database
 delete the existing data in database
 upload file to our database
 view individual product 
 login authentication 
 bcrypt password using hash method
+session and cookies 
+logout authentication

@@ -1,6 +1,15 @@
 // importing express
 const express = require('express');
 
+//importing cookies 
+const cookieParser = require('cookie-parser');
+
+// importing session parser
+const session = require('express-session'); 
+
+// requiring multer for file handling
+const multer = require('multer');
+
 // importing signup.js to our file 
 const signup = require('../model/signup');
 
@@ -11,11 +20,19 @@ const contact = require('../model/contact');
 // importing add product to our file 
 const addProduct = require('../model/add_product');
 
-// requiring multer for file handling
-const multer = require('multer');
-
 const router = express.Router();
 
+// creating cookies and session 
+router.use(cookieParser()); 
+router.use(session({
+    key: "user_sid", 
+    secret: "somerandonstuffs", 
+    resave: false, 
+    saveUninitialized: false, 
+    cookie: {
+        expires: 10000, 
+    }
+}));
 
 // this provide the base url 
 router.get('/', function (req, res) {
@@ -63,7 +80,7 @@ router.post('/signup', (req, res) => {
     regpost.save()
         .then(() =>
             res.redirect("/"))
-            // res.json('register successfully'))
+        // res.json('register successfully'))
         .catch(err => res.status(400).json('error' + err));
 });
 
@@ -202,6 +219,10 @@ router.get('/spare-book', function (req, res) {
     res.render('spareBook');
 });
 
+// about-us page
+router.get('/about-us', function (req, res) { 
+    res.render('about_us');
+});
 
 // ------------ SINGLE PRODUCT DETAILS ----------------
 // for fiction books
@@ -228,12 +249,16 @@ router.post('/login', async (req, res) => {
         if (!login) {
             res.redirect('/');
         }
-         
-        login.comparePassword(password,(error, match) => {
+
+
+        login.comparePassword(password, (error, match) => {
             if (!match) {
                 res.redirect('/');
             }
-        });
+        }); 
+
+        // creating a session for user 
+        req.session.login = login; 
 
         res.redirect('/admin');
     }
@@ -242,22 +267,37 @@ router.post('/login', async (req, res) => {
     }
 });
 
-// ------------ DASHBOARD OR ADMIN SECTION ---------------------
+// ------------ LOGOUT USER ------------------
+router.get('/logout', (req, res) => {
+    if(req.session.login && req.cookies.user_sid){
+        res.clearCookie('user_sid');
+        res.redirect('/');
+    }
+    else{
+        res.redirect('/');
+    }
+})
 
-// about-us page
-router.get('/about-us', function (req, res) {
-    res.render('about_us');
-});
+// ------------ DASHBOARD OR ADMIN SECTION ---------------------
 
 // admin login panel
 router.get('/admin', function (req, res) {
-    res.render('./dashboard/index');
+    if(req.session.login && req.cookies.user_sid) {
+        res.render('dashboard/index');
+    }
+    else{
+        res.redirect('/');
+    }
 });
-
 
 // add_product page
 router.get('/add_product', function (req, res) {
-    res.render('./dashboard/add-product');
+    if(req.session.login && req.cookies.user_sid) {
+        res.render('./dashboard/add-product');
+    }
+    else{
+        res.redirect('/');
+    }
 });
 
 // uploading images for add product
@@ -303,41 +343,60 @@ router.post('/addProduct', upload.single('image'), (req, res) => {
 
 // view_product page
 router.get('/view_product', async (req, res) => {
-    try {
-        const storeData = await addProduct.find({});
-        res.render('./dashboard/view-product', { viewData: storeData });
-        // console.log(storeData); 
+    if(req.session.login && req.cookies.user_sid) {
+        try {
+            const storeData = await addProduct.find({});
+            res.render('./dashboard/view-product', { viewData: storeData });
+            // console.log(storeData); 
+        }
+        catch (err) {
+            console.log(err);
+        }
     }
-    catch (err) {
-        console.log(err);
+    else{
+        res.redirect('/');
     }
+    
 
 });
 
 // view_query page
 router.get('/view_query', async (req, res) => {
-    try {
-        const storeData = await contact.find({});
-        res.render('./dashboard/view-query', { viewData: storeData });
-        // console.log(storeData);
+
+    if(req.session.login && req.cookies.user_sid) {
+        try {
+            const storeData = await contact.find({});
+            res.render('./dashboard/view-query', { viewData: storeData });
+            // console.log(storeData);
+        }
+        catch (err) {
+            console.log(err);
+        }
     }
-    catch (err) {
-        console.log(err);
+    else{
+        res.redirect('/');
     }
+    
+    
 });
 
 // view_registration page
 router.get('/view_registration', async (req, res) => {
-    try {
-        const storeData = await signup.find({});
-        res.render('./dashboard/view-registration', { viewData: storeData });
-        // console.log(storeData);
+    if(req.session.login && req.cookies.user_sid) {
+        try {
+            const storeData = await signup.find({});
+            res.render('./dashboard/view-registration', { viewData: storeData });
+            // console.log(storeData);
+        }
+        catch (err) {
+            console.log(err);
+        }
     }
-    catch (err) {
-        console.log(err);
+    else{
+        res.redirect('/');
     }
-
 });
+
 // --------- UPDATING DATA API ------------------
 
 // edit product (in this we get the data from our collection)
