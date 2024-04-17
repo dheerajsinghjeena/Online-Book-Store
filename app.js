@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 // this is to export router to our app.js
 const router = require('./controller/controller');
 
+// using express as instance in variable app
 const app = express();
 
 var user = require("./db/config");
