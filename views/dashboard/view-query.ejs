@@ -1,59 +1,71 @@
-<style>
-    .view-query {
-        margin-top: 56px;
-    }
-</style>
+<!DOCTYPE html>
+<html lang="en">
 
-<!-- header part -->
-<%- include('header.ejs') %>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>viewQuery</title>
+    <style>
+        .view-query {
+            margin-top: 56px;
+        }
+    </style>
+</head>
 
-    <div class="container-fluid view-query">
-        <div class="row">
-            <div class="col-3 p-0">
-                <%- include('left-menu.ejs') %>
-            </div>
-            <div class="col-9">
-                <h2>Followed Customer Query's </h2>
-             
+<body>
+    <!-- header part -->
+    <%- include('header.ejs') %>
 
-                <% if(viewData.length> 0){ %>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <td>username</td>
-                                <td>address</td>
-                                <td>contact</td>
-                                <td>message</td>
-                            </tr>
-                        </thead>
+        <div class="container-fluid view-query">
+            <div class="row">
+                <div class="col-3 p-0">
+                    <%- include('left-menu.ejs') %>
+                </div>
+                <div class="col-9">
+                    <h2>Followed Customer Query's </h2>
 
-                        <tbody>
-                            <% for(var i=0; i< viewData.length; i++){ %>
+
+                    <% if(viewData.length> 0){ %>
+                        <table class="table">
+                            <thead>
                                 <tr>
-                                    <td>
-                                        <%= viewData[i].username %>
-                                    </td>
-                                    <td>
-                                        <%= viewData[i].address %>
-                                    </td>
-                                    <td>
-                                        <%= viewData[i].contact %>
-                                    </td>
-                                    <td>
-                                        <%= viewData[i].message %>
-                                    </td>
-                                    
-                                    <td>
-                                        <a href="/delete_query/<%= viewData[i]._id %>" class="btn btn-primary"
-                                            role="button">Delete</a>
-                                    </td>
+                                    <td>username</td>
+                                    <td>address</td>
+                                    <td>contact</td>
+                                    <td>message</td>
                                 </tr>
-                                <% } %>
-                        </tbody>
-                    </table>
-                    <% } else { %> No Record Found
-                        <%} %>
+                            </thead>
 
+                            <tbody>
+                                <% for(var i=0; i< viewData.length; i++){ %>
+                                    <tr>
+                                        <td>
+                                            <%= viewData[i].username %>
+                                        </td>
+                                        <td>
+                                            <%= viewData[i].address %>
+                                        </td>
+                                        <td>
+                                            <%= viewData[i].contact %>
+                                        </td>
+                                        <td>
+                                            <%= viewData[i].message %>
+                                        </td>
+
+                                        <td>
+                                            <a href="/delete_query/<%= viewData[i]._id %>" class="btn btn-primary"
+                                                role="button">Delete</a>
+                                        </td>
+                                    </tr>
+                                    <% } %>
+                            </tbody>
+                        </table>
+                        <% } else { %> No Record Found
+                            <%} %>
+
+                </div>
             </div>
         </div>
-    </div>
+</body>
+
+</html>

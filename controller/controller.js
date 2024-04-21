@@ -30,7 +30,7 @@ router.use(session({
     resave: false, 
     saveUninitialized: false, 
     cookie: {
-        expires: 10000, 
+        expires: 500000, 
     }
 }));
 

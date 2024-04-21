@@ -1,67 +1,81 @@
-<!-- style -->
-<style>
-    .product {
-        margin-top: 56px;
-    }
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>editSignup</title>
+
+    <!-- style -->
+    <style>
+        .product {
+            margin-top: 56px;
+        }
 
 
-    form label,
-    input {
-        display: block;
-    }
+        form label,
+        input {
+            display: block;
+        }
 
-    form input,
-    select {
-        padding: 10px;
-        width: 100%;
-        border-radius: 10px;
-        border: 1px solid black;
-        margin-bottom: 10px;
-    }
+        form input,
+        select {
+            padding: 10px;
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid black;
+            margin-bottom: 10px;
+        }
 
-    form select {
-        margin-bottom: 10px;
-    }
+        form select {
+            margin-bottom: 10px;
+        }
 
-    form button {
-        padding: 10px;
-        border-radius: 10px;
-        border: 1px solid black;
-    }
-</style>
+        form button {
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
 
-<!-- header part -->
-<%- include('header.ejs') %>
+<body>
+    <!-- header part -->
+    <%- include('header.ejs') %>
 
-    <div class="container-fluid product">
-        <div class="row">
-            <div class="col-3 p-0">
-                <%- include('left-menu.ejs') %>
+        <div class="container-fluid product">
+            <div class="row">
+                <div class="col-3 p-0">
+                    <%- include('left-menu.ejs') %>
 
-            </div>
-            <div class="col-9 d-flex justify-content-center">
-                <form class="register" method="post">
-                    <h3 class="text-center">Update User Registration </h3>
-                    <label for="first_name">First Name: </label>
-                    <input type="text" name="f_name" id="f_name" value="<%= updateData.first_name %>"
-                        placeholder="first name" required>
+                </div>
+                <div class="col-9 d-flex justify-content-center">
+                    <form class="register" method="post">
+                        <h3 class="text-center">Update User Registration </h3>
+                        <label for="first_name">First Name: </label>
+                        <input type="text" name="f_name" id="f_name" value="<%= updateData.first_name %>"
+                            placeholder="first name" required>
 
-                    <label for="last_name">Last Name: </label>
-                    <input type="text" name="l_name" value="<%= updateData.last_name %>" placeholder="last name"
-                        required>
+                        <label for="last_name">Last Name: </label>
+                        <input type="text" name="l_name" value="<%= updateData.last_name %>" placeholder="last name"
+                            required>
 
-                    <label for="birth_date">Date Of Birth</label>
-                    <input type="date" name="dob" value="<%= updateData.dob %>" required>
+                        <label for="birth_date">Date Of Birth</label>
+                        <input type="date" name="dob" value="<%= updateData.dob %>" required>
 
-                    <label for="email">Email</label>
-                    <input type="text" name="email" value="<%= updateData.email %>" placeholder="email" required>
+                        <label for="email">Email</label>
+                        <input type="text" name="email" value="<%= updateData.email %>" placeholder="email" required>
 
-                    <label for="address">Address</label>
-                    <input type="text" name="address" value="<%= updateData.address %>" placeholder="enter address"
-                        required>
+                        <label for="address">Address</label>
+                        <input type="text" name="address" value="<%= updateData.address %>" placeholder="enter address"
+                            required>
 
-                    <button class="btn btn-primary" type="submit">Submit</button>
-                </form>
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
+
+</body>
+
+</html>

@@ -1,101 +1,118 @@
-<!-- style -->
-<style>
-    .product {
-        margin-top: 56px;
-    }
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EditProduct</title>
+
+    <!-- style -->
+    <style>
+        .product {
+            margin-top: 56px;
+        }
 
 
-    form label,
-    input {
-        display: block;
-    }
+        form label,
+        input {
+            display: block;
+        }
 
-    form input,
-    select {
-        padding: 10px;
-        width: 100%;
-        border-radius: 10px;
-        border: 1px solid black;
-        margin-bottom: 10px;
-    }
+        form input,
+        select {
+            padding: 10px;
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid black;
+            margin-bottom: 10px;
+        }
 
-    form select {
-        margin-bottom: 10px;
-    }
+        form select {
+            margin-bottom: 10px;
+        }
 
-    form button {
-        padding: 10px;
-        border-radius: 10px;
-        border: 1px solid black;
-    }
-</style>
+        form button {
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+    </style>
 
-<!-- header part -->
-<%- include('header.ejs') %>
+</head>
 
-    <div class="container-fluid product">
-        <div class="row">
-            <div class="col-3 p-0">
-                <%- include('left-menu.ejs') %>
+<body>
+    <!-- header part -->
+    <%- include('header.ejs') %>
 
-            </div>
-            <div class="col-9 d-flex justify-content-center">
-                <div class="row">
-                    <h2 class="text-center">Update Products</h2>
-                    <form class="p-4" method="post" enctype="multipart/form-data">
-                        <!-- book name -->
-                        <label for="book_name">Book Name</label>
-                        <input type="text" name="book_name" value="<%= updateData.bookName %>"
-                            placeholder="Add book name">
+        <div class="container-fluid product">
+            <div class="row">
+                <div class="col-3 p-0">
+                    <%- include('left-menu.ejs') %>
 
-                        <!-- book id -->
-                        <label for="book_id">Book Id</label>
-                        <input type="text" name="book_id" value="<%= updateData.bookId %>" placeholder="Enter book Id">
-
-                        <!-- book price -->
-                        <label for="pirce">Book Price</label>
-                        <input type="text" name="bookPrice" value="<%= updateData.bookPrice %>"
-                            placeholder="Book Price">
-
-                        <!-- book author -->
-                        <label for="author">Book Author</label>
-                        <input type="text" name="bookAuthor" placeholder="Book Author" value="<%= updateData.bookAuthor %>">
-
-                        <!-- book type -->
-                        <label for="type">Select Book Type</label>
-                        <select name="type" value="<%= updateData.bookType %>">
-                            <option value="biography">Biography</option>
-                            <option value="fiction">Fiction</option>
-                            <option value="literature">Literature</option>
-                            <option value="love and romance">Love & Romance</option>
-                            <option value="cooking">Cooking</option>
-                            <option value="share market">Share Market</option>
-                            <option value="travel">Tours & Travel</option>
-                            <option value="kids">Kids & Comics</option>
-                        </select>
-
-                        <!-- book stock  -->
-                        <label for="book_stock">No. Of Books left</label>
-                        <input type="number" name="stock" value="<%= updateData.bookLeft %>"
-                            placeholder="Number of books left" min="0">
-
-                        <!-- image upload -->
-                        <label for="image">Image Upload</label>
-                        <input type="file" style="border: none;" name="image" value="<%= updateData.image %>">
-
-                        <span style="display: block;">
-                            <% if(updateData.image){ %>
-                                <img src="/<%= updateData.image %>" height="50" width="50">
-                                <!-- <%= console.log(updateData.image); %> -->
-                                <% } %>
-                        </span>
-
-
-                        <!-- submit button  -->
-                        <button type="submit" class="btn btn-primary mt-3">Submit</button>
-                    </form>
                 </div>
+                <div class="col-9 d-flex justify-content-center">
+                    <div class="row">
+                        <h2 class="text-center">Update Products</h2>
+                        <form class="p-4" method="post" enctype="multipart/form-data">
+                            <!-- book name -->
+                            <label for="book_name">Book Name</label>
+                            <input type="text" name="book_name" value="<%= updateData.bookName %>"
+                                placeholder="Add book name">
 
+                            <!-- book id -->
+                            <label for="book_id">Book Id</label>
+                            <input type="text" name="book_id" value="<%= updateData.bookId %>"
+                                placeholder="Enter book Id">
+
+                            <!-- book price -->
+                            <label for="pirce">Book Price</label>
+                            <input type="text" name="bookPrice" value="<%= updateData.bookPrice %>"
+                                placeholder="Book Price">
+
+                            <!-- book author -->
+                            <label for="author">Book Author</label>
+                            <input type="text" name="bookAuthor" placeholder="Book Author"
+                                value="<%= updateData.bookAuthor %>">
+
+                            <!-- book type -->
+                            <label for="type">Select Book Type</label>
+                            <select name="type" value="<%= updateData.bookType %>">
+                                <option value="biography">Biography</option>
+                                <option value="fiction">Fiction</option>
+                                <option value="literature">Literature</option>
+                                <option value="love and romance">Love & Romance</option>
+                                <option value="cooking">Cooking</option>
+                                <option value="share market">Share Market</option>
+                                <option value="travel">Tours & Travel</option>
+                                <option value="kids">Kids & Comics</option>
+                            </select>
+
+                            <!-- book stock  -->
+                            <label for="book_stock">No. Of Books left</label>
+                            <input type="number" name="stock" value="<%= updateData.bookLeft %>"
+                                placeholder="Number of books left" min="0">
+
+                            <!-- image upload -->
+                            <label for="image">Image Upload</label>
+                            <input type="file" style="border: none;" name="image" value="<%= updateData.image %>">
+
+                            <span style="display: block;">
+                                <% if(updateData.image){ %>
+                                    <img src="/<%= updateData.image %>" height="50" width="50">
+                                    <!-- <%= console.log(updateData.image); %> -->
+                                    <% } %>
+                            </span>
+
+
+                            <!-- submit button  -->
+                            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                        </form>
+                    </div>
+
+                </div>
             </div>
         </div>
-    </div>
+
+</body>
+
+</html>
